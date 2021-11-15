@@ -36,7 +36,7 @@ function App() {
             data.filter(({ ticker }) =>
               tickers.some((item) => item === ticker)
             )
-            .map(item => <Card key={item.ticker} card={item} dataOfArray={dataOfArray} remove={remove}/>)
+            .map(item => <Card key={item.ticker} card={item} remove={remove}/>)
           ) : null
         } 
       </div>
