@@ -1,0 +1,40 @@
+.card {
+  /* border: 1px solid rgb(255, 255, 255); */
+  padding: 7px;
+  width: 150px;
+  text-align: center;
+  margin: 10px;
+  border-radius: 5px;
+  color: rgb(65, 45, 45);
+  background-color: rgb(149, 250, 149);
+  box-shadow: 0 0 1px 1px rgb(205, 230, 206);
+}
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.card-red {
+  /* border: 1px solid rgb(54, 34, 34); */
+  padding: 7px;
+  width: 150px;
+  text-align: center;
+  margin: 10px;
+  border-radius: 5px;
+  color: rgb(54, 34, 34);
+  background-color: rgb(255, 200, 200);
+  box-shadow: 0 0 1px 1px rgb(226, 201, 201);
+}
+
+button {
+  background-color: rgb(228, 0, 23);
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  color: white;
+}
+button:hover {
+  background-color: rgb(255, 85, 85);
+  color: rgb(255, 255, 255);
+  transition: all 0.7s ease;
+}
