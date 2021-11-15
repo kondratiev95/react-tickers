@@ -1,5 +1,4 @@
 .card {
-  /* border: 1px solid rgb(255, 255, 255); */
   padding: 7px;
   width: 150px;
   text-align: center;
@@ -15,7 +14,6 @@
   flex-wrap: wrap;
 }
 .card-red {
-  /* border: 1px solid rgb(54, 34, 34); */
   padding: 7px;
   width: 150px;
   text-align: center;
@@ -25,7 +23,6 @@
   background-color: rgb(255, 200, 200);
   box-shadow: 0 0 1px 1px rgb(226, 201, 201);
 }
-
 button {
   background-color: rgb(228, 0, 23);
   border-radius: 3px;
