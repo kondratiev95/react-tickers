@@ -1,43 +1,24 @@
-import { useEffect, useState } from 'react';
-import { io } from "socket.io-client";
+import { useDispatch, useSelector } from 'react-redux';
 import { Card } from './Card';
+import { getData } from './asyncActions/tickers';
 import './App.css'
 
 function App() {
 
-  const [data, setData] = useState([]);
-  const [tickers, setTickers] = useState([
-    'AAPL', // Apple
-    'GOOGL', // Alphabet
-    'MSFT', // Microsoft
-    'AMZN', // Amazon
-    'FB', // Facebook
-    'TSLA', // Tesla
-  ]);
-
-  useEffect(() => {
-    const socket = io('http://localhost:4000');
-    socket.emit('start');
-    socket.on('ticker', function(response) {
-        const res = Array.isArray(response) ? response : [response];
-        setData(res);
-    })  
-  }, []);
-
-  const remove = (card) => {
-    setTickers(tickers.filter(ticker => ticker !== card.ticker));
-    console.log(tickers);
-  }
+  const dispatch = useDispatch();
+  const data = useSelector(state => state.data.data);
+  const tickers = useSelector(state => state.data.tickers);
 
   return (
     <div className="App">
+      <button className='btn-get'onClick={() => dispatch(getData())}>Get Tickers</button>
       <div className="cards">
         { data.length > 0 ? (
             data.filter(({ ticker }) =>
               tickers.some((item) => item === ticker)
             )
-            .map(item => <Card key={item.ticker} card={item} remove={remove}/>)
-          ) : null
+            .map(item => <Card key={item.ticker} card={item} />)
+          ) : <div><h3>Ничего не найдено...</h3></div>  
         } 
       </div>
     </div>
